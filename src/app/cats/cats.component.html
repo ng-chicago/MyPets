@@ -1,0 +1,22 @@
+<div><a class="nav-link" routerLink="/">Home</a></div>
+<h1 class="pageHead">My Cats</h1>
+<button class="btn btn-warning  btn-refreshData" (click)="refreshCats()">Refresh Only Cats Data</button>
+<br><br>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Breed</th>
+    <th>Birthdate</th>
+    <th>Current Age</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let i of cats">
+    <td>{{ i.Name }}</td>
+    <td>{{ i.Breed }}</td>
+    <td>{{ i.Birthdate }}</td>
+    <td>{{ i.CurrentAge }}</td>
+  </tr>
+  </tbody>
+</table>

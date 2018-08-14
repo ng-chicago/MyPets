@@ -1,6 +1,6 @@
 {
-  "name": "BaseAngular6-PWA",
-  "short_name": "Very Short",
+  "name": "My Pets App",
+  "short_name": "My Pets",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
