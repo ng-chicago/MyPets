@@ -13,7 +13,7 @@ import { SharedModule } from '../../shared.module';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public sds: SpreadsheetDS) {
+  constructor(private sds: SpreadsheetDS) {
   }
 
   ngOnInit() {

@@ -1,10 +1,10 @@
 <h1>My Pets</h1>
 
-<div><a routerLink="/dogs">My Dogs</a></div>
+<div><a routerLink="/dogs"><span *ngIf="sds.dogsCount != 0">{{ sds.dogsCount }} </span>Dog<span *ngIf="sds.dogsCount > 1">s</span></a></div>
 <br>
-<div><a routerLink="/cats">My Cats</a></div>
+<div><a routerLink="/cats"><span *ngIf="sds.catsCount != 0">{{ sds.catsCount }} </span>Cat<span *ngIf="sds.catsCount > 1">s</span></a></div>
 <br>
-<div><a routerLink="/allOthers">All Other Animals</a></div>
+<div><a routerLink="/allOthers"><span *ngIf="sds.allOthersCount != 0">{{ sds.allOthersCount }} </span>Other Animal<span *ngIf="sds.allOthersCount > 1">s</span></a></div>
 <br>
 
 <br>

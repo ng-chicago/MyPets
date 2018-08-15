@@ -1,5 +1,5 @@
 <div><a routerLink="/">Home</a></div>
-<h1>All Other Animals</h1>
+<h1><span *ngIf="sds.allOthersCount != 0">{{ sds.allOthersCount }} </span>Other Animal<span *ngIf="sds.allOthersCount > 1">s</span></h1>
 <button (click)="refreshAllOthers()">Refresh Only All Others Animals Data</button>
 <br><br>
 <table>

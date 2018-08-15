@@ -16,6 +16,10 @@ export class SpreadsheetDS  {
   cats$: Observable<Array<any>>;
   allOthers$: Observable<Array<any>>;
 
+  dogsCount = 0;
+  catsCount = 0;
+  allOthersCount = 0;
+
   dogsUpdated = new EventEmitter<Array<any>>();
   catsUpdated = new EventEmitter<Array<any>>();
   allOthersUpdated = new EventEmitter<Array<any>>();
@@ -66,6 +70,7 @@ export class SpreadsheetDS  {
       dogs = this.transformDogs(next);
 
       SpreadsheetDS.setLocal(dogs, this.ssIDs.getCacheName(objName));
+        this.dogsCount = dogs.length;
         this.dogsUpdated.emit(dogs);
 
     });
@@ -94,6 +99,7 @@ export class SpreadsheetDS  {
       cats = this.transformCats(next);
 
       SpreadsheetDS.setLocal(cats, this.ssIDs.getCacheName(objName));
+      this.catsCount = cats.length;
       this.catsUpdated.emit(cats);
 
     });
@@ -122,6 +128,7 @@ export class SpreadsheetDS  {
       allOthers = this.transformAllOthers(next);
 
       SpreadsheetDS.setLocal(allOthers, this.ssIDs.getCacheName(objName));
+      this.allOthersCount = allOthers.length;
       this.allOthersUpdated.emit(allOthers);
 
     });
