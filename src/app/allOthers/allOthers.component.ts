@@ -12,7 +12,7 @@ export class AllOthersComponent implements OnInit {
   allOthers: Array<any>;
   objName = 'AllOthers';
 
-  constructor(private sds: SpreadsheetDS) {
+  constructor(public sds: SpreadsheetDS) {
 
     this.sds.allOthersUpdated.subscribe(
       (newData: any) => {

@@ -12,7 +12,7 @@ export class CatsComponent implements OnInit {
   cats: Array<any>;
   objName = 'Cats';
 
-  constructor(private sds: SpreadsheetDS) {
+  constructor(public sds: SpreadsheetDS) {
 
     this.sds.catsUpdated.subscribe(
       (newData: any) => {

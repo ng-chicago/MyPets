@@ -12,7 +12,7 @@ export class DogsComponent implements OnInit {
   dogs: Array<any>;
   objName = 'Dogs';
 
-  constructor(private sds: SpreadsheetDS) {
+  constructor(public sds: SpreadsheetDS) {
 
     this.sds.dogsUpdated.subscribe(
       (newData: any) => {
