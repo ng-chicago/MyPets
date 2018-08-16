@@ -1,22 +1,23 @@
-<div><a routerLink="/">Home</a></div>
-<h1><span *ngIf="sds.dogsCount != 0">{{ sds.dogsCount }} </span>Dog<span *ngIf="sds.dogsCount > 1">s</span></h1>
-<button (click)="refreshDogs()">Refresh Only Dogs Data</button>
-<br><br>
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Breed</th>
-    <th>Birthdate</th>
-    <th>Current Age</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let i of dogs">
-    <td>{{ i.Name }}</td>
-    <td>{{ i.Breed }}</td>
-    <td>{{ i.Birthdate }}</td>
-    <td>{{ i.CurrentAge }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container">
+  <h1><span *ngIf="sds.dogsCount != 0">{{ sds.dogsCount }} </span>Dog<span *ngIf="sds.dogsCount > 1">s</span></h1>
+  <button (click)="refreshDogs()">Refresh Only Dogs Data</button>
+  <br><br>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Birthdate</th>
+      <th>Current Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of dogs">
+      <td>{{ i.Name }}</td>
+      <td>{{ i.Breed }}</td>
+      <td>{{ i.Birthdate }}</td>
+      <td>{{ i.CurrentAge }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

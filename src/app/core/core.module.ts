@@ -6,10 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from '../app-routing.module';
 
 import { SpreadsheetDS } from '../data/spreadsheet-data.service';
+import { HeaderComponent } from './nav/header/header.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     SharedModule,
@@ -17,7 +19,8 @@ import { SpreadsheetDS } from '../data/spreadsheet-data.service';
     BrowserAnimationsModule
   ],
   exports: [
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderComponent
   ],
   providers: [
     SpreadsheetDS
