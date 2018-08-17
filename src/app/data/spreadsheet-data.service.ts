@@ -64,7 +64,7 @@ export class SpreadsheetDS {
 
   loadDogs(objName: string) {
 
-    const animalName = 'Dog';
+    let animalCount = 0;
     let dogs: Array<any> = [];
     this.dogs$ = this.getHTTPData_SS(objName);
     this.dogs$.subscribe(next => {
@@ -72,12 +72,11 @@ export class SpreadsheetDS {
       if (next != null) {
         // transform the JSON returned to make it more usable
         dogs = this.transformDogs(next);
-        SpreadsheetDS.setLocal(dogs, this.ssIDs.getCacheName(objName));
-        this.dogsLabel = this.buildLabel(dogs.length, animalName);
-        this.dogsUpdated.emit(dogs);
-      } else {
-        this.dogsLabel = this.buildLabel(0, animalName);
+        animalCount = dogs.length;
       }
+      SpreadsheetDS.setLocal(dogs, this.ssIDs.getCacheName(objName));
+      this.dogsLabel = this.buildLabel(animalCount, objName);
+      this.dogsUpdated.emit(dogs);
 
     });
 
@@ -100,7 +99,7 @@ export class SpreadsheetDS {
 
   loadCats(objName: string) {
 
-    const animalName = 'Cat';
+    let animalCount = 0;
     let cats: Array<any> = [];
     this.cats$ = this.getHTTPData_SS(objName);
     this.cats$.subscribe(next => {
@@ -108,12 +107,11 @@ export class SpreadsheetDS {
       if (next != null) {
         // transform the JSON returned to make it more usable
         cats = this.transformCats(next);
-        SpreadsheetDS.setLocal(cats, this.ssIDs.getCacheName(objName));
-        this.catsLabel = this.buildLabel(cats.length, animalName);
-        this.catsUpdated.emit(cats);
-      } else {
-        this.catsLabel = this.buildLabel(0, animalName);
+        animalCount = cats.length;
       }
+      SpreadsheetDS.setLocal(cats, this.ssIDs.getCacheName(objName));
+      this.catsLabel = this.buildLabel(animalCount, objName);
+      this.catsUpdated.emit(cats);
 
     });
 
@@ -136,7 +134,7 @@ export class SpreadsheetDS {
 
   loadOthers(objName: string) {
 
-    const animalName = 'Other Animal';
+    let animalCount = 0;
     let others: Array<any> = [];
     this.others$ = this.getHTTPData_SS(objName);
     this.others$.subscribe(next => {
@@ -144,13 +142,11 @@ export class SpreadsheetDS {
       if (next != null) {
         // transform the JSON returned to make it more usable
         others = this.transformOthers(next);
-
-        SpreadsheetDS.setLocal(others, this.ssIDs.getCacheName(objName));
-        this.othersLabel = this.buildLabel(others.length, animalName);
-        this.othersUpdated.emit(others);
-      } else{
-        this.othersLabel = this.buildLabel(0, animalName);
+        animalCount = others.length;
       }
+      SpreadsheetDS.setLocal(others, this.ssIDs.getCacheName(objName));
+      this.othersLabel = this.buildLabel(animalCount, objName);
+      this.othersUpdated.emit(others);
 
     });
 
@@ -171,9 +167,10 @@ export class SpreadsheetDS {
     return tempArray;
   }
 
-  buildLabel(animalCount: number, animalName: string) {
+  buildLabel(animalCount: number, objName: string) {
 
     let label = '';
+    const animalName = this.ssIDs.getLabelName(objName);
 
     switch (animalCount) {
       case 0: {

@@ -37,7 +37,7 @@ K">{{ sds.dogsLabel }}</h1>
 
   <button class="mat-flat-button" (click)="refreshDogs()">Refresh Dogs</button>
   <br><br>
-  <table>
+  <table *ngIf="dogs.length">
     <thead>
     <tr>
       <th>Name</th>

@@ -1,10 +1,20 @@
 <div class="container">
 
-  <h1>{{ sds.othersLabel }}</h1>
+  <h1><img class="animalIcon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h
+0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0LjUiIGN5PSI5LjUiIHI9Ij
+IuNSIvPjxjaXJjbGUgY3g9IjkiIGN5PSI1LjUiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjE1IiBje
+T0iNS41IiByPSIyLjUiLz48Y2lyY2xlIGN4PSIxOS41IiBjeT0iOS41IiByPSIyLjUiLz48cGF0
+aCBkPSJNMTcuMzQgMTQuODZjLS44Ny0xLjAyLTEuNi0xLjg5LTIuNDgtMi45MS0uNDYtLjU0LTE
+uMDUtMS4wOC0xLjc1LTEuMzItLjExLS4wNC0uMjItLjA3LS4zMy0uMDktLjI1LS4wNC0uNTItLj
+A0LS43OC0uMDRzLS41MyAwLS43OS4wNWMtLjExLjAyLS4yMi4wNS0uMzMuMDktLjcuMjQtMS4yO
+C43OC0xLjc1IDEuMzItLjg3IDEuMDItMS42IDEuODktMi40OCAyLjkxLTEuMzEgMS4zMS0yLjky
+IDIuNzYtMi42MiA0Ljc5LjI5IDEuMDIgMS4wMiAyLjAzIDIuMzMgMi4zMi43My4xNSAzLjA2LS4
+0NCA1LjU0LS40NGguMThjMi40OCAwIDQuODEuNTggNS41NC40NCAxLjMxLS4yOSAyLjA0LTEuMz
+EgMi4zMy0yLjMyLjMxLTIuMDQtMS4zLTMuNDktMi42MS00Ljh6Ii8+PC9zdmc+">{{ sds.othersLabel }}</h1>
 
   <button class="mat-flat-button" (click)="refreshOthers()">Refresh Other Animals</button>
   <br><br>
-  <table>
+  <table *ngIf="others.length">
     <thead>
     <tr>
       <th>Name</th>

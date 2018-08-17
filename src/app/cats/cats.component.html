@@ -34,7 +34,7 @@ BhY2l0eToxIiBpZD0icGF0aDE4OTEiLz4KPC9zdmc+">{{ sds.catsLabel }}</h1>
 
   <button class="mat-flat-button" (click)="refreshCats()">Refresh Cats</button>
   <br><br>
-  <table>
+  <table *ngIf="cats.length">
     <thead>
     <tr>
       <th>Name</th>
