@@ -8,6 +8,7 @@ const appRoutes: Routes = [
   { path: 'dogs', loadChildren: './dogs/dogs.module#DogsModule' },
   { path: 'cats', loadChildren: './cats/cats.module#CatsModule' },
   { path: 'others', loadChildren: './others/others.module#OthersModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutModule' },
   { path: '404', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
   { path: '**', redirectTo: '/404'}
 ];

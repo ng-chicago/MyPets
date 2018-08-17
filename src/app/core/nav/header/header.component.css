@@ -1,10 +1,9 @@
-
 a {
   text-decoration: none;
   font-weight: bold;
   color: rgba(0,0,0,.9);
 }
 .brandText {
-  font-size: 150%;
   padding-left: 5px;
+  font-size: 1.8em;
 }
