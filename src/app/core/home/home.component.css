@@ -1,4 +1,12 @@
 .container {
-  margin-top: 20px;
   margin-left: 30px;
+  font-size: 2em;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: rgba(0,0,0,.9);
+}
+.link {
+  padding-bottom: 30px;
 }

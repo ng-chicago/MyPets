@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { SharedModule } from '../shared.module';
 
 import { PageNotFoundComponent } from './page-not-found.component';
 import { PageNotFoundRoutingModule } from './page-not-found-routing.module';
@@ -10,7 +10,7 @@ import { PageNotFoundRoutingModule } from './page-not-found-routing.module';
   ],
   imports: [
     PageNotFoundRoutingModule,
-    CommonModule
+    SharedModule
   ]
 })
 export class PageNotFoundModule { }

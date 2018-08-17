@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { SpreadsheetDS } from './data/spreadsheet-data.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: []
 })
 export class AppComponent {
 
-  constructor(public router: Router,
-              public sds: SpreadsheetDS) {
-
-  }
+  constructor(public router: Router) {}
 
 }

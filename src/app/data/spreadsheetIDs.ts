@@ -5,7 +5,7 @@ export class SpreadsheetIDs {
   dataObjects =  [
     {objName: 'Dogs', tabID: 'omyavzt', cache: 'dogsCache', useYN: 'Y'},
     {objName: 'Cats', tabID: 'o9ws5hl', cache: 'catsCache', useYN: 'Y'},
-    {objName: 'AllOthers', tabID: 'od6', cache: 'allOthersCache', useYN: 'Y'}
+    {objName: 'Others', tabID: 'od6', cache: 'othersCache', useYN: 'Y'}
   ];
   tabURLStart = 'https://spreadsheets.google.com/feeds/list/';
   allTabsURLStart = 'https://spreadsheets.google.com/feeds/worksheets/';

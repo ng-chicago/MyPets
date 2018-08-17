@@ -3,34 +3,34 @@ import { Component, OnInit } from '@angular/core';
 import { SpreadsheetDS } from '../data/spreadsheet-data.service';
 
 @Component({
-  selector: 'allOthers',
-  templateUrl: './allOthers.component.html',
-  styleUrls: ['./allOthers.component.css']
+  selector: 'others',
+  templateUrl: './others.component.html',
+  styleUrls: ['./others.component.css']
 })
-export class AllOthersComponent implements OnInit {
+export class OthersComponent implements OnInit {
 
-  allOthers: Array<any>;
-  objName = 'AllOthers';
+  others: Array<any>;
+  objName = 'Others';
 
   constructor(public sds: SpreadsheetDS) {
 
-    this.sds.allOthersUpdated.subscribe(
+    this.sds.othersUpdated.subscribe(
       (newData: any) => {
-        this.allOthers = newData;
+        this.others = newData;
         // console.log(this.objName + ' updated');
       }
     );
   }
 
   ngOnInit() {
-    this.sds.allOthersUpdated.emit(
+    this.sds.othersUpdated.emit(
       // use the local storage if there until HTTP call retrieves something
       JSON.parse(localStorage[this.sds.ssIDs.getCacheName(this.objName)] || '[]')
     );
   }
 
-  refreshAllOthers() {
-    this.sds.loadAllOthers(this.objName);
+  refreshOthers() {
+    this.sds.loadOthers(this.objName);
   }
 
 }

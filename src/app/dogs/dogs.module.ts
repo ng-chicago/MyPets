@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared.module';
 
 import { DogsComponent } from './dogs.component';
 import { DogsRoutingModule } from './dogs-routing.module';
-
 
 @NgModule({
   declarations: [
@@ -11,7 +10,7 @@ import { DogsRoutingModule } from './dogs-routing.module';
   ],
   imports: [
     DogsRoutingModule,
-    CommonModule
+    SharedModule
   ]
 })
 export class DogsModule { }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { SpreadsheetDS } from '../../data/spreadsheet-data.service';
-
+import { Component } from '@angular/core';
 import { SharedModule } from '../../shared.module';
+
+import { SpreadsheetDS } from '../../data/spreadsheet-data.service';
 
 @Component({
   selector: 'app-home',
@@ -11,20 +11,12 @@ import { SharedModule } from '../../shared.module';
     SharedModule
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor(public sds: SpreadsheetDS) {
-  }
+  constructor(public sds: SpreadsheetDS) {}
 
-  ngOnInit() {
-    // this.sds.homeUpdated.emit(
-    //   JSON.parse(localStorage[this.sds.ssIDs.getCacheName(this.objName)] || '[]')
-    // );
-  }
-
-  refreshEverything() {
+  refreshAll() {
     this.sds.refreshAll();
-    // this.cds.loadDates(this.cds.whatCalendar, this.cds.howManyRecords);
   }
 
 }

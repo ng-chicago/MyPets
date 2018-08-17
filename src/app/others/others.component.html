@@ -1,8 +1,8 @@
 <div class="container">
 
-  <h1><span *ngIf="sds.allOthersCount != 0">{{ sds.allOthersCount }} </span>Other Animal<span *ngIf="sds.allOthersCount > 1">s</span></h1>
+  <h1>{{ sds.othersLabel }}</h1>
 
-  <button (click)="refreshAllOthers()">Refresh Only All Others Animals Data</button>
+  <button class="mat-flat-button" (click)="refreshOthers()">Refresh Other Animals</button>
   <br><br>
   <table>
     <thead>
@@ -10,11 +10,11 @@
       <th>Name</th>
       <th>Type</th>
       <th>Birthdate</th>
-      <th>Current Age</th>
+      <th>Age</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let i of allOthers">
+    <tr *ngFor="let i of others">
       <td>{{ i.Name }}</td>
       <td>{{ i.Type }}</td>
       <td>{{ i.Birthdate }}</td>

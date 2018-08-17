@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared.module';
 
 import { CatsComponent } from './cats.component';
 import { CatsRoutingModule } from './cats-routing.module';
@@ -10,7 +10,7 @@ import { CatsRoutingModule } from './cats-routing.module';
   ],
   imports: [
     CatsRoutingModule,
-    CommonModule
+    SharedModule
   ]
 })
 export class CatsModule { }

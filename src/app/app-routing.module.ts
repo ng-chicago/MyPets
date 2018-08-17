@@ -7,7 +7,7 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'dogs', loadChildren: './dogs/dogs.module#DogsModule' },
   { path: 'cats', loadChildren: './cats/cats.module#CatsModule' },
-  { path: 'allOthers', loadChildren: './allOthers/allOthers.module#AllOthersModule' },
+  { path: 'others', loadChildren: './others/others.module#OthersModule' },
   { path: '404', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
   { path: '**', redirectTo: '/404'}
 ];
