@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .container {
   margin-top: 30px;
 }
@@ -8,4 +9,10 @@
   vertical-align: bottom;
   padding-right: 10px;
   height: 50px;
+}
+h1 {
+  font-size: 1.8em;
+}
+table {
+  width: 95%;
 }

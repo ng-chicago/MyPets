@@ -1,5 +1,4 @@
 <div class="container">
-
   <h1><img class="animalIcon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h
 0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSI0LjUiIGN5PSI5LjUiIHI9Ij
 IuNSIvPjxjaXJjbGUgY3g9IjkiIGN5PSI1LjUiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjE1IiBje
@@ -11,26 +10,41 @@ C43OC0xLjc1IDEuMzItLjg3IDEuMDItMS42IDEuODktMi40OCAyLjkxLTEuMzEgMS4zMS0yLjky
 IDIuNzYtMi42MiA0Ljc5LjI5IDEuMDIgMS4wMiAyLjAzIDIuMzMgMi4zMi43My4xNSAzLjA2LS4
 0NCA1LjU0LS40NGguMThjMi40OCAwIDQuODEuNTggNS41NC40NCAxLjMxLS4yOSAyLjA0LTEuMz
 EgMi4zMy0yLjMyLjMxLTIuMDQtMS4zLTMuNDktMi42MS00Ljh6Ii8+PC9zdmc+">{{ sds.othersLabel }}</h1>
+  <button class="mat-stroked-button" (click)="refreshOthers()">Refresh Other Animals</button>
+  <br>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Rows">
+  </mat-form-field>
+  <table mat-table [dataSource]="others" class="mat-elevation-z8"
+         matSort matSortActive="created"
+         matSortDisableClear
+         matSortDirection="asc">
 
-  <button class="mat-flat-button" (click)="refreshOthers()">Refresh Other Animals</button>
-  <br><br>
-  <table *ngIf="others.length">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Birthdate</th>
-      <th>Age</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let i of others">
-      <td>{{ i.Name }}</td>
-      <td>{{ i.Type }}</td>
-      <td>{{ i.Birthdate }}</td>
-      <td>{{ i.CurrentAge }}</td>
-    </tr>
-    </tbody>
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let record"> {{record.Name}} </td>
+    </ng-container>
+    <!-- Breed Column -->
+    <ng-container matColumnDef="Type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td mat-cell *matCellDef="let record"> {{record.Type}} </td>
+    </ng-container>
+    <!-- Birthdate Column -->
+    <ng-container matColumnDef="Birthdate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Birthdate</th>
+      <td mat-cell *matCellDef="let record"> {{record.Birthdate}} </td>
+    </ng-container>
+    <!-- Age Column -->
+    <ng-container matColumnDef="CurrentAge">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
+      <td mat-cell *matCellDef="let record"> {{record.CurrentAge}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
   </table>
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
 </div>
 
